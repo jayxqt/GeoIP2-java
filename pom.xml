@@ -217,15 +217,6 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
-                <executions>
-                    <execution>
-                        <phase>initialize</phase>
-                        <id>invoke build</id>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
                     <executable>git</executable>
                     <commandlineArgs>submodule update --init --recursive</commandlineArgs>

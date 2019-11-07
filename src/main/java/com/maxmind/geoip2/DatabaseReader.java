@@ -184,8 +184,9 @@ public class DatabaseReader implements DatabaseProvider, Closeable {
         // We throw the same exception as the web service when an IP is not in
         // the database
         if (node == null) {
-            throw new AddressNotFoundException("The address "
-                    + ipAddress.getHostAddress() + " is not in the database.");
+            System.out.println("The address " + ipAddress.getHostAddress() + " is not in the database.");
+//            throw new AddressNotFoundException("The address " + ipAddress.getHostAddress() + " is not in the database.");
+            return null;
         }
 
         InjectableValues inject = new JsonInjector(locales, ipAddress.getHostAddress());
