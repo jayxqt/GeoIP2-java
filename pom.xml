@@ -8,33 +8,6 @@
     <name>MaxMind GeoIP2 API</name>
     <description>GeoIP2 webservice client and database reader</description>
     <url>http://dev.maxmind.com/geoip/geoip2/web-services</url>
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-    <organization>
-        <name>MaxMind, Inc.</name>
-        <url>http://www.maxmind.com/</url>
-    </organization>
-    <scm>
-        <url>https://github.com/maxmind/GeoIP2-java</url>
-        <connection>scm:git:git://github.com:maxmind/GeoIP2-java.git</connection>
-        <developerConnection>scm:git:git@github.com:maxmind/GeoIP2-java.git</developerConnection>
-    </scm>
-    <issueManagement>
-        <url>https://github.com/maxmind/GeoIP2-java/issues</url>
-        <system>GitHub</system>
-    </issueManagement>
-    <developers>
-        <developer>
-            <id>oschwald</id>
-            <name>Gregory J. Oschwald</name>
-            <email>goschwald@maxmind.com</email>
-        </developer>
-    </developers>
     <dependencies>
         <dependency>
             <groupId>com.maxmind.db</groupId>
@@ -108,26 +81,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
+      <pluginManagement>
         <plugins>
-            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.0-M1</version>
-                <executions>
-                    <execution>
-                        <id>javadoc-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <links>
-                                <link>
-                                http://maxmind.github.io/MaxMind-DB-Reader-java/doc/latest/</link>
-                            </links>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -160,13 +115,13 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.5.1</version>
+              <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+              </configuration>
             </plugin>
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
@@ -228,10 +183,6 @@
                 <version>2.1</version>
             </plugin>
         </plugins>
+      </pluginManagement>
     </build>
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
 </project>
